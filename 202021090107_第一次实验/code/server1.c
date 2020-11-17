@@ -34,7 +34,7 @@ int main(int argc, char **argv){
 
         if(connfd = accept(listenfd, (struct sockaddr*) &client_addr, &clilen) < 0)
             perror("accept error\n");
-        printf("client address: %s\n", inet_ntoa(client_addr.sin_addr), client_addr.sin_port);
+        printf("client address: %s, client port: %d\n", inet_ntoa(client_addr.sin_addr), client_addr.sin_port);
         close(connfd);
     }
 
