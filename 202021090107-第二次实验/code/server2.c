@@ -33,7 +33,7 @@ int main(int argc, char **argv){
         clilen = sizeof(client_addr);
         if((connfd = accept(listenfd, (struct sockaddr*)&client_addr, &clilen)) < 0)
             perror("accept error\n");
-        printf("client address: %s\n", inet_ntoa(client_addr.sin_addr), client_addr.sin_port);
+        printf("client address: %s, client port: %d\n", inet_ntoa(client_addr.sin_addr), client_addr.sin_port);
         while(1){
             if(recv(connfd, buff, sizeof(buff), 0) == -1)
                 perror("recv error\n");
